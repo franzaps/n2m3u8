@@ -21,17 +21,21 @@ The tool expects a Nostr event of kind 1663 in JSON format as input. Example:
 {
   "kind": 1663,
   "tags": [
-    ["url", "http://server1.example.com"],
-    ["url", "http://server2.example.com"],
-    ["x", "segment_000.ts"],
-    ["x", "segment_001.ts"],
-    ["key", "BASE64_ENCRYPTION_KEY"]
+    // Blossom servers
+    ["url", "https://cdn1.blossom"],
+    ["url", "https://cdn2.blossom"],
+    ["url", "https://cdn3.blossom"],
+    // TS segments in order
+    ["x", "0a976bf40d71e5c4b84007139789a10e9a858a0275e4d40846199812034619aa"],
+    ["x", "9a03029dd3f06bada54c67800dd2e7f552c9def8e57b41290588d58b056131d5"],
+    ["x", "350520f08425f983a77524c3f343d3c117eafd52eeff9d0433723a190e47ddda"],
+    ["aes_key", "KWv8iYnP6uOFm4bbRa9CGg=="]
   ],
-  "content": "M3U8 Playlist Configuration"
+  "content": "Description of the video"
 }
 ```
 
 - Each `url` tag specifies a server to check for segments
 - Each `x` tag specifies a segment filename (in order)
-- The `key` tag provides the encryption key in Base64 format
+- The `aes_key` tag provides the AES-128-CBC encryption key in base64 format
 
