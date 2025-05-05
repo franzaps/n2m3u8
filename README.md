@@ -4,6 +4,8 @@ A tool to generate m3u8 playlists from Nostr kind 1663 events.
 
 Kind 1663 is an experimental kind that aggregates data chunks and Blossom servers where they could possibly be located. For now it's MPEG-TS segments to produce an HLS stream.
 
+Inspired by [Usenet NZB files](https://www.usenet.com/nzb/).
+
 ## Usage
 
 1. Fetch the nostr event with servers and hashes of encrypted video chunks
