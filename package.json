@@ -1,13 +1,14 @@
 {
   "name": "n2m3u8",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-	"bin": {
-		"n2m3u8": "./index.js"
-	},
+  "bin": {
+    "n2m3u8": "./index.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

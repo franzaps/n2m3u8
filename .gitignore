@@ -1,0 +1,4 @@
+.DS_Store
+config*
+out/
+bak/
