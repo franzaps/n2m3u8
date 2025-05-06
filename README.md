@@ -23,7 +23,7 @@ cat config.json | node n2m3u8.js
 nak req --id ec1688e87843e8774d1813c371fe65af890be090bdb831f03ceefdd2144ad679 wss://relay.damus.io | npx --yes github:franzaps/n2m3u8 | ffmpeg -f hls -allowed_extensions ALL -protocol_whitelist file,http,https,tcp,tls,crypto,fd -i - -f mpegts - | mpv -
 ```
 
-## Kind 1663: Blossom HLS playlists
+## Kind 1663: Blossom HLS playlists (draft)
 
 ```jsonc
 {
@@ -52,6 +52,6 @@ nak req --id ec1688e87843e8774d1813c371fe65af890be090bdb831f03ceefdd2144ad679 ws
 ```
 
 - Content has the m3u8 index information, all filenames MUST be hashes, which will be looked up by exact match in `x` tags. NOTE: This is _not_ a master m3u8.
-- Each `x` tag specifies a segment hash, plus EXTINF and a Blossom relay hint (tags are in order)
+- Each `x` tag specifies a segment hash and a Blossom relay hint (tags are in order)
 - Each `url` tag specifies a Blossom server to check for segments, starting from first to last
 - The optional `aes_key` tag provides the AES-128-CBC key in base64 format to decrypt the content (segements can still be encrypted but the key provided out of band), if present `#EXT-X-KEY:METHOD=AES-128,URI="file:///tmp/enc.key",IV=0x00000000000000000000000000000000` will be injected in the resulting m3u8
